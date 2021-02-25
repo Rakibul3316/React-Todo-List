@@ -37,13 +37,21 @@ class App extends Component {
     });
   };
   handleDelete = (id) => {
-    const filteredItems = this.state.items.filter((item) => item.id != id);
+    const filteredItems = this.state.items.filter((item) => item.id !== id);
     this.setState({
       items: filteredItems,
     });
   };
   handleEdit = (id) => {
-    console.log(`handle edit ${id}`);
+    const filteredItems = this.state.items.filter((item) => item.id !== id);
+    const findedItem = this.state.items.find((item) => item.id === id);
+    this.setState({
+      item: findedItem.title,
+      items: filteredItems,
+      id: id,
+      editItem: true,
+    });
+    console.log(findedItem);
   };
   render() {
     // console.log(this.state);
