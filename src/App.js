@@ -31,7 +31,7 @@ class App extends Component {
     console.log(`handle edit ${id}`);
   };
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <div className="container">
         <div className="row">
