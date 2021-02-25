@@ -21,20 +21,15 @@ class App extends Component {
     e.preventDefault();
     const newItem = {
       id: uuidv4(),
-      titel: this.state.item,
+      title: this.state.item,
     };
     const updatedItem = [...this.state.items, newItem];
-    this.setState(
-      {
-        items: updatedItem,
-        id: uuidv4(),
-        item: "",
-        editItem: false,
-      },
-      () => {
-        console.log(this.state);
-      }
-    );
+    this.setState({
+      items: updatedItem,
+      id: uuidv4(),
+      item: "",
+      editItem: false,
+    });
   };
   clearList = () => {
     console.log("clear list");
